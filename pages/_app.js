@@ -1,11 +1,14 @@
 'use client';
 import { ChakraProvider } from '@chakra-ui/react'
 import '@/styles/globals.css'
+import { AuthContextProvider } from '@/stores/authContext';
 
 export default function App({ Component, pageProps }) {
   return(
-    <ChakraProvider>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <AuthContextProvider>
+      <ChakraProvider>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </AuthContextProvider>
      )
 }

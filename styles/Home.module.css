@@ -1,3 +1,11 @@
 .boxColor {
-  background-color: mintgreen;
+  background-color: green;
+}
+
+.logUl {
+  float: right;
+}
+
+.logList {
+  display: inline;
 }

@@ -1,7 +1,5 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import Link from 'next/link'
+import styles from '@/styles/Home.module.css';
 import {
   Accordion,
   AccordionItem,
@@ -9,13 +7,26 @@ import {
   AccordionPanel,
   AccordionIcon,
   Box,
-} from '@chakra-ui/react'
-
-const inter = Inter({ subsets: ['latin'] })
+  Button,
+  ButtonGroup
+} from '@chakra-ui/react';
+import { useContext } from 'react'
+import AuthContext from '../stores/authContext';
 
 export default function Home() {
+const {user, login, logout, authReady} = useContext(AuthContext);
+console.log(user);
+// console.log(login);
+
   return (
     <>
+    { authReady && (
+      <ul className={styles.logUl}>
+        { !user && <li className={styles.logList} onClick={ login }><Button colorScheme='blue'>Login/Signup</Button></li>}
+        { user && <li className={styles.logList}>{user.email}</li>}
+        {user && <li className={styles.logList} onClick={ logout }><Button colorScheme='red'>Logout</Button></li>}
+      </ul>
+    )}
       <Accordion defaultIndex={[0]} allowMultiple>
         <AccordionItem>
           <h2>
