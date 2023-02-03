@@ -3,9 +3,13 @@
 }
 
 .logUl {
-  float: right;
+  display: block;
 }
 
 .logList {
   display: inline;
+}
+
+.emailName {
+  font-weight: bolder;
 }
