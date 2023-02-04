@@ -51,7 +51,7 @@ import {
                             {user && <Button style={{marginRight: '15vw'}} onClick={ logout } colorScheme='red'>Logout</Button>}
                             { user && <span className={styles.emailName}>{user.email}</span> }
                         </>
-                    )}
+                     )}
                   </ButtonGroup>
                   <HStack spacing="3">
                     {/* { authReady && (
